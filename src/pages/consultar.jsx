@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import '../style/consultar.css';
 
-// Configuração do Modal
-Modal.setAppElement('#root'); // Define o elemento raiz para acessibilidade
+Modal.setAppElement('#root');
 
 const Consultar = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -30,7 +29,7 @@ const Consultar = () => {
             setError('');
             setIsLoading(true);
 
-            const response = await axios.get('http://localhost:8000/api/demandas', {
+            const response = await axios.get('https://capitanibackend.upsilan.com.br/api/demandas', {
                 params: {
                     tipo: tipo,
                     info: info,
@@ -53,18 +52,15 @@ const Consultar = () => {
         }
     };
 
-    // Função para abrir o modal de confirmação
     const handleDeletar = () => {
         setIsModalOpen(true);
     };
 
-    // Função para fechar o modal e limpar campos
     const closeModal = () => {
         setIsModalOpen(false);
         limparCampos();
     };
 
-    // Função para limpar campos e estado
     const limparCampos = () => {
         setTipo('');
         setInfo('');
@@ -73,29 +69,26 @@ const Consultar = () => {
         setError('');
     };
 
-    // Função para confirmar a exclusão
     const confirmarDelecao = async () => {
         try {
             setIsLoading(true);
             setError('');
 
-            // Envia o código da demanda para o backend
-            const response = await axios.delete('http://localhost:8000/api/demandas', {
+            const response = await axios.delete('https://capitanibackend.upsilan.com.br/api/demandas', {
                 auth: {
                     username: 'candidato',
                     password: 'cape123',
                 },
                 data: {
-                    codigo: demanda.codigo, // Envia apenas o código da demanda
+                    codigo: demanda.codigo,
                 },
             });
 
-            // Exibe a mensagem de sucesso
             setMensagem('Demanda deletada com sucesso!');
-            setDemanda(null); // Limpa os dados da demanda
-            setTipo(''); // Limpa o campo TIPO
-            setInfo(''); // Limpa o campo INFO
-            setIsModalOpen(false); // Fecha o modal
+            setDemanda(null);
+            setTipo('');
+            setInfo('');
+            setIsModalOpen(false);
         } catch (err) {
             setError('Erro ao deletar a demanda. Tente novamente.');
             console.error('Erro detalhado:', err);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Para navegação entre páginas
+import { useNavigate } from 'react-router-dom';
 import '../style/home.css';
 
 const Home = () => {

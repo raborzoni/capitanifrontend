@@ -68,7 +68,7 @@ const AtualizarDemanda = () => {
             setError('');
 
             const response = await axios.put(
-                `http://localhost:8000/api/demandas`,
+                `https://capitanibackend.upsilan.com.br/api/demandas`,
                 formData,
                 {
                     auth: {

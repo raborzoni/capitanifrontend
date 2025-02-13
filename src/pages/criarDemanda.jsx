@@ -51,10 +51,8 @@ const CriarDemanda = () => {
             setIsLoading(true);
             setError('');
 
-            //console.log('Payload sendo enviado:', payload);
-
             const response = await axios.post(
-                'http://localhost:8000/api/demandas',
+                'https://capitanibackend.upsilan.com.br/api/demandas',
                 formData,
                 {
                     auth: {
@@ -129,11 +127,11 @@ const CriarDemanda = () => {
                 <div className="form-group">
                     <label>Prazo (dias):</label>
                     <input type="number" name="prazo" value={formData.prazo} onChange={handleChange} min="1" step="1" onKeyDown={(e) => {
-                            
-                            if (e.key === '.' || e.key === ',') {
-                                e.preventDefault();
-                            }
-                        }} required />
+
+                        if (e.key === '.' || e.key === ',') {
+                            e.preventDefault();
+                        }
+                    }} required />
                 </div>
 
                 {error && <p className="error-message">{error}</p>}
