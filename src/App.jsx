@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home.jsx';
+import Home from './Home.jsx';
 import Consultar from './pages/Consultar.jsx';
 import CriarDemanda from './pages/CriarDemanda.jsx';
 import AtualizarDemanda from './pages/AtualizarDemanda.jsx';
