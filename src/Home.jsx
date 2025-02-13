@@ -9,10 +9,10 @@ const Home = () => {
     <div className="container">
       <h1 className="title">Sistema de Demandas</h1>
       <div className="buttonContainer">
-        <button onClick={() => navigate('/pages/consultar')} className="button">
+        <button onClick={() => navigate('/consultar')} className="button">
           Consultar
         </button>
-        <button onClick={() => navigate('/pages/criar')} className="button">
+        <button onClick={() => navigate('/criar')} className="button">
           Criar Demanda
         </button>
       </div>
