@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Consultar from './pages/Consultar';
+import Consultar from './pages/consultar';
 import CriarDemanda from './pages/criarDemanda';
 import AtualizarDemanda from './pages/atualizarDemanda';
 
