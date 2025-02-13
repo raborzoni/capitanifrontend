@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
 import { useNavigate } from 'react-router-dom';
+import Modal from 'react-modal';
 import '../style/consultar.css';
+
+// Configuração do Modal
+Modal.setAppElement('#root'); // Define o elemento raiz para acessibilidade
 
 const Consultar = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -10,6 +14,8 @@ const Consultar = () => {
     const [info, setInfo] = useState('');
     const [demanda, setDemanda] = useState(null);
     const [error, setError] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [mensagem, setMensagem] = useState('');
     const navigate = useNavigate();
 
     const consultarDemanda = async () => {
@@ -47,6 +53,57 @@ const Consultar = () => {
         }
     };
 
+    // Função para abrir o modal de confirmação
+    const handleDeletar = () => {
+        setIsModalOpen(true);
+    };
+
+    // Função para fechar o modal e limpar campos
+    const closeModal = () => {
+        setIsModalOpen(false);
+        limparCampos();
+    };
+
+    // Função para limpar campos e estado
+    const limparCampos = () => {
+        setTipo('');
+        setInfo('');
+        setDemanda(null);
+        setMensagem('');
+        setError('');
+    };
+
+    // Função para confirmar a exclusão
+    const confirmarDelecao = async () => {
+        try {
+            setIsLoading(true);
+            setError('');
+
+            // Envia o código da demanda para o backend
+            const response = await axios.delete('http://localhost:8000/api/demandas', {
+                auth: {
+                    username: 'candidato',
+                    password: 'cape123',
+                },
+                data: {
+                    codigo: demanda.codigo, // Envia apenas o código da demanda
+                },
+            });
+
+            // Exibe a mensagem de sucesso
+            setMensagem('Demanda deletada com sucesso!');
+            setDemanda(null); // Limpa os dados da demanda
+            setTipo(''); // Limpa o campo TIPO
+            setInfo(''); // Limpa o campo INFO
+            setIsModalOpen(false); // Fecha o modal
+        } catch (err) {
+            setError('Erro ao deletar a demanda. Tente novamente.');
+            console.error('Erro detalhado:', err);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <div className="container">
             <h1 className="title">Consulta de Demandas</h1>
@@ -79,6 +136,9 @@ const Consultar = () => {
                     <button onClick={handleAtualizar} className="button">
                         Atualizar
                     </button>
+                    <button onClick={handleDeletar} className="consultar-button delete-button">
+                        Deletar
+                    </button>
                 </div>
             )}
 
@@ -90,6 +150,25 @@ const Consultar = () => {
                     <p>Carregando...</p>
                 </div>
             )}
+
+            <Modal
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
+                contentLabel="Confirmar Deleção"
+                className="modal"
+                overlayClassName="modal-overlay"
+            >
+                <h2>Confirmar Deleção</h2>
+                <p>Tem certeza que deseja deletar a demanda <strong>{demanda?.codigo}</strong>?</p>
+                <div className="modal-button-group">
+                    <button onClick={confirmarDelecao} className="modal-button confirm-button">
+                        Confirmar
+                    </button>
+                    <button onClick={closeModal} className="modal-button cancel-button">
+                        Cancelar
+                    </button>
+                </div>
+            </Modal>
         </div>
     );
 };
