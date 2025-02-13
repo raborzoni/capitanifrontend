@@ -12,7 +12,7 @@ const Home = () => {
         <button onClick={() => navigate('/pages/consultar')} className="button">
           Consultar
         </button>
-        <button onClick={() => navigate('/pages/criarDemanda')} className="button">
+        <button onClick={() => navigate('/pages/criar')} className="button">
           Criar Demanda
         </button>
       </div>
