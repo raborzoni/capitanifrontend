@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import Consultar from './pages/Consultar';
-import CriarDemanda from './pages/CriarDemanda';
-import AtualizarDemanda from './pages/AtualizarDemanda';
+import Consultar from '@/pages/Consultar';
+import CriarDemanda from '@/pages/CriarDemanda';
+import AtualizarDemanda from '@/pages/AtualizarDemanda';
 
 const App = () => {
   return (
