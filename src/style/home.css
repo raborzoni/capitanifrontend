@@ -1,36 +1,58 @@
-.container {
-    display: 'flex';
-    flex-direction: 'column';
-    align-items: 'center';
-    justify-content: 'center';
-    height: '100vh';
-    font-family: 'Arial, sans-serif';
-    background-color: '#f0f0f0';
-  }
-  
-  .title {
-    font-size: '32px';
-    color: '#333';
-    margin-bottom: '20px';
-  }
+.homeContainer {
+  background-color: '#f0f0f0';
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  place-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: medium;
+}
 
-  .buttonContainer{
-    display: 'flex';
-    gap: '20px';
-  }
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
 
-  .button {
-    padding: '15px 30px';
-    font-size: '18px';
-    background-color: '#007bff';
-    color: '#fff';
-    border: 'none';
-    border-radius: '5px';
-    cursor: 'pointer';
-    transition: 'background-color 0.3s ease';
-    margin: 0px 5px;
-  }
+.logo {
+  width: 173px;
+  height: auto;
+}
 
-  .buttonHover{
-    background-color: '#0056b3';
-  }
+.demanda-home-tittle-container {
+  background-color: #005638;
+  text-align: center;
+  color: #f9f9f9;
+  border-top-left-radius: 20px;
+  height: 55px;
+  width: 675px;
+}
+
+.title {
+  text-align: center;
+  color: #f9f9f9;
+  font-size: 50px;
+}
+
+.buttonContainer {
+  gap: '20px';
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #005638;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.buttonHover {
+  background-color: '#0056b3';
+}
