@@ -152,7 +152,7 @@ const AtualizarDemanda = () => {
                     <button type="submit" disabled={isLoading} className="submit-button">
                         {isLoading ? 'Atualizando...' : 'Atualizar Demanda'}
                     </button>
-                    <button type="button" onClick={() => navigate('/pages/consultar')} className="cancel-button">
+                    <button type="button" onClick={() => navigate('/consultar')} className="cancel-button">
                         Voltar
                     </button>
                 </div>

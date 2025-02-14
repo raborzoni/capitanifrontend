@@ -108,14 +108,16 @@ const Consultar = () => {
                 <button onClick={consultarDemanda} className="button">
                     Consultar
                 </button>
-                <button type="button" onClick={() => navigate('/')} className="cancel-button">
+                <button type="button" onClick={() => navigate('/')} className="cancelButton">
                     Voltar
                 </button>
             </div>
 
             {demanda && (
                 <div className="demanda-container">
-                    <h2 className="demanda-title">Dados da Demanda</h2>
+                    <div className="demanda-tittle-container">
+                        <h2 className="demanda-title">Dados da Demanda</h2>
+                    </div>
                     <p><strong>Código:</strong> {demanda.codigo}</p>
                     <p><strong>Descrição:</strong> {demanda.descricao}</p>
                     <p><strong>Descrição Web:</strong> {demanda.descricaoweb}</p>
@@ -157,7 +159,7 @@ const Consultar = () => {
                     <button onClick={confirmarDelecao} className="modal-button confirm-button">
                         Confirmar
                     </button>
-                    <button onClick={closeModal} className="modal-button cancel-button">
+                    <button onClick={closeModal} className="modal-button cancelButton">
                         Cancelar
                     </button>
                 </div>
