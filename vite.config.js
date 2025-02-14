@@ -5,15 +5,4 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build: {
-    outDir: 'dist',
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'main.jsx'),
-      },
-    },
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.json'],
-  },
 })
