@@ -1,69 +1,81 @@
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  background-color: #005638;
+  text-align: center;
+  color: #f9f9f9;
   
-  .title {
-    text-align: center;
-    color: #333;
-  }
-  
-  .form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .input {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
-  .demanda-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-  }
-  
-  .demanda-title {
-    margin-top: 0;
-    color: #333;
-  }
-  
-  .error {
-    color: red;
-    text-align: center;
-  }
-  
-  .loading {
-    text-align: center;
-    color: #007bff;
-    font-size: 18px;
-    margin-top: 20px;
-  }
+  border-top-left-radius: 20px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #005638;
+  background-color: #f9f9f9;
+  color: #005638;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #005638;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8AB339;
+}
+
+.demanda-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #005638;
+}
+
+.demanda-title {
+  margin-top: 0;
+  color: #f9f9f9;
+}
+
+.demanda-tittle-container {
+  background-color: #005638;
+  text-align: center;
+  color: #f9f9f9;
+  border-top-left-radius: 20px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  color: #00814E;
+  font-size: 18px;
+  margin-top: 20px;
+}
 
 
-  .modal {
+.modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -103,20 +115,38 @@
 }
 
 .confirm-button {
-  background-color: #ff4d4d;
+  background-color: #cc0000;
   color: #fff;
 }
 
 .confirm-button:hover {
-  background-color: #cc0000;
+  background-color: #ff4d4d;
 }
 
-.cancel-button {
-  background-color: #6c757d;
+.cancelButton {
+  background-color: #ED8B16;
   color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.cancel-button:hover {
-  background-color: #5a6268;
+.cancelButton:hover {
+  background-color: #00814E;
 }
-  
+
+.delete-button {
+  background-color: #cc0000;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #ff4d4d;
+}
