@@ -52,7 +52,7 @@ const CriarDemanda = () => {
             setError('');
 
             const response = await axios.post(
-                'https://capitanibackend.upsilan.com.br/api/demandas',
+                'http://localhost:8000/api/demandas',
                 formData,
                 {
                     auth: {

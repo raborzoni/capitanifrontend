@@ -5,7 +5,7 @@ const DemandaList = () => {
     const [demandas, setDemandas] = useState([]);
 
     useEffect(() => {
-        axios.get('https://capitanibackend.upsilan.com.br/api/demandas')
+        axios.get('http://localhost:8000/api/demandas')
             .then(response => setDemandas(response.data))
             .catch(error => console.error(error));
     }, []);

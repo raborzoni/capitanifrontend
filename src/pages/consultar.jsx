@@ -29,7 +29,7 @@ const Consultar = () => {
             setError('');
             setIsLoading(true);
 
-            const response = await axios.get('https://capitanibackend.upsilan.com.br/api/demandas', {
+            const response = await axios.get('http://localhost:8000/api/demandas', {
                 params: {
                     tipo: tipo,
                     info: info,
@@ -48,7 +48,7 @@ const Consultar = () => {
 
     const handleAtualizar = () => {
         if (demanda) {
-            navigate('/pages/atualizar', { state: { demanda } });
+            navigate('/atualizar', { state: { demanda } });
         }
     };
 
@@ -74,7 +74,7 @@ const Consultar = () => {
             setIsLoading(true);
             setError('');
 
-            const response = await axios.delete('https://capitanibackend.upsilan.com.br/api/demandas', {
+            const response = await axios.delete('http://localhost:8000/api/demandas', {
                 auth: {
                     username: 'candidato',
                     password: 'cape123',
