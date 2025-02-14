@@ -8,7 +8,6 @@
   align-content: center;
   justify-content: center;
   font-family: Arial, sans-serif;
-  font-size: medium;
 }
 
 .logo-container {
@@ -28,13 +27,18 @@
   color: #f9f9f9;
   border-top-left-radius: 20px;
   height: 55px;
-  width: 675px;
+  width: 625px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
 }
 
-.title {
+.home-title {
   text-align: center;
-  color: #f9f9f9;
-  font-size: 50px;
+  color: #005638;
+  font-size: 40px;
+
 }
 
 .buttonContainer {

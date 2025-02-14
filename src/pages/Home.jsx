@@ -11,11 +11,7 @@ const Home = () => {
       <div className="logo-container">
         <img src={logo} alt="Logo do Sistema" className="logo" />
       </div>
-
-      <div className="demanda-home-tittle-container">
-        <h1 className="title">Sistema de Demandas</h1>
-      </div>
-
+      <h1 className="home-title">Sistema de Demandas</h1>
       <div className="buttonContainer">
         <button onClick={() => navigate('/consultar')} className="button">
           Consultar

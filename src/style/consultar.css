@@ -3,14 +3,12 @@
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
-  
 }
 
 .title {
-  background-color: #005638;
   text-align: center;
-  color: #f9f9f9;
-  border-top-left-radius: 20px;
+  color: #005638;
+  font-size: 40px;
 }
 
 .form {
