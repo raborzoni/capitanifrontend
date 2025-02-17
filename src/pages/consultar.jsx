@@ -118,9 +118,7 @@ const Consultar = () => {
 
             {demanda && (
                 <div className="demanda-container">
-                    <div className="demanda-tittle-container">
                         <h2 className="demanda-title">Dados da Demanda</h2>
-                    </div>
                     <p><strong>Código:</strong> {demanda.codigo}</p>
                     <p><strong>Descrição:</strong> {demanda.descricao}</p>
                     <p><strong>Descrição Web:</strong> {demanda.descricaoweb}</p>
@@ -144,7 +142,7 @@ const Consultar = () => {
 
             {isLoading && (
                 <div className="loading">
-                    <ClipLoader color="#007bff" size={30} />
+                    <ClipLoader color="#00814E" size={30} />
                     <p>Carregando...</p>
                 </div>
             )}
