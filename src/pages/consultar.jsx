@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/cropped-LOGO_CAPESESP-1400x1016.png';
 import Modal from 'react-modal';
 import '../style/consultar.css';
 
@@ -99,9 +100,11 @@ const Consultar = () => {
 
     return (
         <div className="container">
+
+            <div className="logo-container">
+                <img src={logo} alt="Logo do Sistema" className="logo" />
+            </div>
             <h1 className="title">Consulta de Demandas</h1>
-
-
             <div className="form">
                 <input type="text" placeholder="TIPO" value={tipo} onChange={(e) => setTipo(e.target.value)} className="input" />
                 <input type="text" placeholder="INFO" value={info} onChange={(e) => setInfo(e.target.value)} className="input" />

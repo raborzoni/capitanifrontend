@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
+import logo from '../assets/cropped-LOGO_CAPESESP-1400x1016.png';
 import '../style/atualizarDemanda.css';
 
 const AtualizarDemanda = () => {
@@ -24,7 +25,7 @@ const AtualizarDemanda = () => {
     useEffect(() => {
         if (location.state && location.state.demanda) {
             const demanda = location.state.demanda;
-            
+
             setFormData({
                 codigo: demanda.codigo,
                 descricao: demanda.descricao,
@@ -92,57 +93,65 @@ const AtualizarDemanda = () => {
 
     return (
         <div className="atualizar-demanda-container">
+            <div className="logo-container">
+                <img src={logo} alt="Logo do Sistema" className="logo" />
+            </div>
             <h1 className="atualizar-demanda-title">Atualizar Demanda</h1>
-
             <form onSubmit={handleSubmit} className="atualizar-demanda-form">
-                <div className="form-group">
-                    <label>Código:</label>
-                    <input type="text" name="codigo" value={formData.codigo} onChange={handleChange} disabled />
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Código:</label>
+                        <input type="text" name="codigo" value={formData.codigo} onChange={handleChange} disabled />
+                    </div>
+                    <div className="form-group">
+                        <label>Descrição:</label>
+                        <input type="text" name="descricao" value={formData.descricao} onChange={handleChange} required />
+                    </div>
                 </div>
 
-                <div className="form-group">
-                    <label>Descrição:</label>
-                    <input type="text" name="descricao" value={formData.descricao} onChange={handleChange} required />
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Descrição Web:</label>
+                        <input type="text" name="descriweb" value={formData.descriweb} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label>Tipo:</label>
+                        <input type="text" name="tipo" value={formData.tipo} onChange={handleChange} required />
+                    </div>
                 </div>
 
-                <div className="form-group">
-                    <label>Descrição Web:</label>
-                    <input type="text" name="descriweb" value={formData.descriweb} onChange={handleChange} required />
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Grupo:</label>
+                        <input type="text" name="grupo" value={formData.grupo} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label>Área:</label>
+                        <input type="text" name="area" value={formData.area} onChange={handleChange} required />
+                    </div>
                 </div>
 
-                <div className="form-group">
-                    <label>Tipo:</label>
-                    <input type="text" name="tipo" value={formData.tipo} onChange={handleChange} required />
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Ativo:</label>
+                        <input type="text" name="ativo" value={formData.ativo} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label>Atendimento:</label>
+                        <input type="text" name="atendimento" value={formData.atendimento} onChange={handleChange} required />
+                    </div>
                 </div>
 
-                <div className="form-group">
-                    <label>Grupo:</label>
-                    <input type="text" name="grupo" value={formData.grupo} onChange={handleChange} required />
-                </div>
-
-                <div className="form-group">
-                    <label>Área:</label>
-                    <input type="text" name="area" value={formData.area} onChange={handleChange} required />
-                </div>
-
-                <div className="form-group">
-                    <label>Ativo:</label>
-                    <input type="text" name="ativo" value={formData.ativo} onChange={handleChange} required />
-                </div>
-
-                <div className="form-group">
-                    <label>Atendimento:</label>
-                    <input type="text" name="atendimento" value={formData.atendimento} onChange={handleChange} required />
-                </div>
-
-                <div className="form-group">
-                    <label>Prazo (dias):</label>
-                    <input type="number" name="prazo" value={formData.prazo} onChange={handleChange} min="1" step="1"
-                        onKeyDown={(e) => {
-                            if (e.key === '.' || e.key === ',') {
-                                e.preventDefault();
-                            }
-                        }} required />
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Prazo (dias):</label>
+                        <input type="number" name="prazo" value={formData.prazo} onChange={handleChange} min="1" step="1"
+                            onKeyDown={(e) => {
+                                if (e.key === '.' || e.key === ',') {
+                                    e.preventDefault();
+                                }
+                            }} required />
+                    </div>
                 </div>
 
                 {error && <p className="error-message">{error}</p>}
