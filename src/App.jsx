@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import Consultar from '@/views/Consultar';
+import Consultar from '@/views/Consultar.jsx';
 import CriarDemanda from '@/pages/CriarDemanda.jsx';
 import AtualizarDemanda from '@/pages/AtualizarDemanda.jsx';
 
